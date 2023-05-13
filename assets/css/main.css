@@ -2113,6 +2113,7 @@ input, select, textarea {
 			float: right;
 			margin: 0 0 1em 1.5em;
 			top: 0.25em;
+			opacity: 1.0;
 		}
 
 		.image.left, .image.right {
@@ -2571,6 +2572,25 @@ input, select, textarea {
 			line-height: 1.5em;
 			margin: 0;
 		}
+
+		.item {
+			margin: 0 0 2em 0;
+		}
+	
+			.item .image {
+				margin: 0 0 1.5em 0;
+			}
+	
+			.item h3 {
+				font-size: 1em;
+				margin: 0 0 0.5em 0;
+			}
+	
+			.item p {
+				font-size: 0.8em;
+				line-height: 1.5em;
+				margin: 0;
+			}
 
 /* Header */
 
