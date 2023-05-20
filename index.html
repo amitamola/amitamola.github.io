@@ -89,10 +89,21 @@
                 <h2>38</h2>
                 <p>Certifications</p>
             </div>
-            <div class="widget-item">
-                <h2>2261</h2>
-                <p>StackOverflow Reputation</p>
-            </div>
+                <div class="widget-item"> 
+                    <h2 id="reputation"></h2> 
+                        <p>StackOverflow Reputation</p> 
+                </div> 
+            
+            <script>
+                var userId = 2126357;
+                var apiUrl = "https://api.stackexchange.com/2.2/users/" + userId + "?site=stackoverflow";
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById("reputation").innerHTML = data.items[0].reputation;
+                    })
+                    .catch(error => console.error(error));
+            </script>
         </div>
     </header>
     <!-- End of Page Header -->
@@ -105,43 +116,27 @@
         <div class="container text-center">
             <h6 class="subtitle">Experience</h6>
             <h6 class="section-title mb-4">What have I worked on</h6>
-            <p class="mb-5 pb-4">In my 6+ years of professional and academic career, I have gained experience in:</p>
+            <p class="mb-5 pb-4">In my <span id="years-of-experience"></span>+ years of professional and academic career, I have gained experience in:</p>
 
-            <!-- <div class="row">
-                <div class="col-sm-5 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-layers-alt"></i>
-                            <h5>Computer Vision</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-joomla"></i>
-                            <h5>Machine Learning</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-pie-chart"></i>
-                            <h5>Visualization</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-5 col-md-3 mb-4">
-                    <div class="custom-card card border">
-                        <div class="card-body">
-                            <i class="icon ti-files"></i>
-                            <h5>Data Science</h5>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
+            <script>
+              // Get the current date
+              var currentDate = new Date();
+            
+              // Set the start date to July 2016
+              var startDate = new Date(2016, 6, 27);
+            
+              // Calculate the number of years between the start date and the current date
+              var yearsOfExperience = currentDate.getFullYear() - startDate.getFullYear();
+            
+              // Adjust the number of years if the current month is before July
+              if (currentDate.getMonth() < 6) {
+                yearsOfExperience--;
+              }
+            
+              // Update the content of the span element with the calculated years of experience
+              document.getElementById('years-of-experience').textContent = yearsOfExperience.toString();
+            </script>
+            
             <div class="row">
                 <div class="col-sm-5 col-md-3 mb-4">
                     <div class="custom-card card border">
